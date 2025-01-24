@@ -3,6 +3,8 @@ module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
 
   theme: {
@@ -12,6 +14,7 @@ module.exports = {
         sans: ['"Public Sans"', "sans-serif"],
       },
       fontSize: {
+        "11":"11px",
         "13": "13px",
         '24': "24px",
         "32": "32px",
@@ -46,7 +49,8 @@ module.exports = {
           "mirage-blue": "#1b262f",
           "charm-pink": "#da6d97",
           "light-san-juan-blue": "#6c8294"
-        }
+        },
+        "red": "#F00",
       },
       borderWidth: {
         '1': '1px',
