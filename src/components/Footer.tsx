@@ -6,7 +6,7 @@ import SocialMedia from "./SocialIcon";
 const FooterMenu: React.FC = () => {
   return (
     <>
-      <div className="footer-menu relative bg-secondary-mirage-blue overflow-hidden">
+      <div className="footer-menu relative bg-secondary-mirage-blue overflow-hidden ">
         <div className="flex flex-col items-center justify-center sm:flex-row sm:justify-between  mx-auto">
           <div className="flex flex-col items-center gap-6 sm:flex-row lg:flex-row lg:items-center sm:gap-[18px]">
             <Logo
