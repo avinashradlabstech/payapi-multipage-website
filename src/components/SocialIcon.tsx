@@ -2,7 +2,7 @@ import React from "react";
 import { socialIcons } from "../data/socialIcons";
 import FacebookIcon from "./SocialMediaLogos/FacebookIcon";
 import TwitterIcon from "./SocialMediaLogos/TwitterIcon";
-import LinkedInIcon from "./SocialMediaLogos/LinkedinIcon";
+import LinkedInIcon from "./SocialMediaLogos/LinkedInIcon";
 
 interface SocialMediaData {
   appliedClassName?: string;

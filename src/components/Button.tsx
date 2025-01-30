@@ -5,7 +5,7 @@ interface ButtonData {
   text: string | undefined;
   disabled?: boolean;
   additionalButtonCss?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonData> = ({

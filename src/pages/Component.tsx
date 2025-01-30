@@ -26,20 +26,6 @@ const Component: React.FC = () => {
     }
   };
 
-  const requiredEmail = (value: string) => {
-    if (!value) {
-      return "This field can't be empty";
-    }
-
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    if (!emailPattern.test(value)) {
-      return "Please enter a valid email address";
-    }
-
-    return undefined;
-  };
-
   return (
     <>
       <div className="flex flex-col px-5 py-5">
@@ -125,8 +111,7 @@ const Component: React.FC = () => {
             placeholder={"Enter email address"}
             buttonLabel={"Schedule a Demo"}
             additionalButtonCss="xs:min-w-[20.4375rem]"
-            autoComplete="off"
-            validation={requiredEmail}
+            autoComplete="off"            
           />
         </div>
       </div>
