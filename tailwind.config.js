@@ -13,8 +13,11 @@ module.exports = {
         serif: ['"DM Serif Display"', "serif"],
         sans: ['"Public Sans"', "sans-serif"],
       },
+      gap: {
+        31: "1.9375rem",
+      },
       fontSize: {
-        "11":"11px",
+        "11": "11px",
         "13": "13px",
         '24': "24px",
         "32": "32px",
@@ -51,6 +54,7 @@ module.exports = {
           "light-san-juan-blue": "#6c8294"
         },
         "red": "#F00",
+        "alice-blue":"#EDF3F8"
       },
       borderWidth: {
         '1': '1px',
@@ -60,9 +64,42 @@ module.exports = {
         24: "24px"
       },
       boxShadow: {
-        primaryBtn: '10px 10px 25px -10px rgba(54, 83, 107, 0.25);'
-      }
+        primary: '10px 10px 25px -10px rgba(54, 83, 107, 0.25);'
+      },
+      screens: {
+        'xs': '375px',
+        'sm': '768px',
+        'lg': '1440px',
+      },
+
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".social-icon": {
+          'padding-top': "2.5625rem",
+          'padding-bottom': '2.5rem',
+          'gap': '1.125rem',
+        },
+        ".error-lbl": {
+          "position":"absolute",
+          "padding": "8px 116px 0px",
+        },
+        "@screen sm": {
+          ".sm-bg-footer": {
+            "top": "-3.4375rem",
+            "left": "279px",
+          },
+        },
+        "@screen lg": {
+          ".lg-bg-footer": {
+            "left": "1050px",
+            "top": "-136px",
+          },
+        },
+
+      }, ["responsive", "hover"]);
+    },
+  ],
 };

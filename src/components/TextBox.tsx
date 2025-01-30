@@ -7,6 +7,7 @@ interface TextBoxData {
   placeholder: string;
   value?: string;
   className?: string;
+  autoComplete?: string;
   validation?: (value: string) => string | undefined;
 }
 
@@ -17,10 +18,11 @@ const TextBox: React.FC<TextBoxData> = ({
   placeholder,
   value,
   className,
+  autoComplete,
   validation,
 }) => {
-  const [isFocused, setIsFocused] = useState(Boolean);
-  const [inputValue, setInputValue] = useState(value);
+  const [isFocused, setIsFocused] = useState<boolean>(false);
+  const [inputValue, setInputValue] = useState<string | undefined>(value);
   const [error, setError] = useState<string | undefined>("");
 
   // Handle input change and validation
@@ -36,33 +38,29 @@ const TextBox: React.FC<TextBoxData> = ({
   };
 
   return (
-    <div className='flex flex-col'>
+    <div className="flex flex-col justify-center">
       <input
         type={type}
         placeholder={placeholder}
-        className={`border-b outline-none px-2 py-1 
-            text-sans text-15 font-normal leading-25 tracking-custom pl-[1.25rem] pb-[1.062rem]
-            ${isFocused ? " " : "opacity-50"}            
+        className={` pl-[1.25rem]            
             ${className}
-            ${error ? "border-red text-red opacity-50" : " border-secondary-san-juan-blue text-secondary-san-juan-blue"} `}
-            
+            ${isFocused ? "opacity-1" : ""}    
+            ${error ? "border-red text-red " : "border-secondary-san-juan-blue text-secondary-san-juan-blue"} `}
         id={id}
         name={name}
         value={inputValue}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         onChange={handleChange}
+        autoComplete={autoComplete}
       />
 
       {/* Error message */}
-      {error && <p className="text-sans text-11 text-red tracking-wider font-thin opacity-50  pl-[1.25rem] mt-[0.875rem]">{error}</p>}
-
-       {/* Inline styles for placeholder */}
-      <style>{`
-        input::placeholder {
-          color: ${error ? "#F00" : "#36536b"};
-        }
-      `}</style>
+      {error && (
+        <p className="text-sans text-11 text-red tracking-wider font-thin opacity-50 pl-[1.25rem] mt-[0.875rem]">
+          {error}
+        </p>
+      )}
     </div>
   );
 };

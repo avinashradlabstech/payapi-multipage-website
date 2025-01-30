@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Pricing from "../pages/Pricing";
 import Contact from "../pages/Contact";
+import Component from "../pages/Component";
 
 interface Route {
   path: string;
@@ -26,6 +27,10 @@ const routes: Route[] = [
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/component",
+    element: <Component />,
   },
   {
     path: "*",
