@@ -75,9 +75,9 @@ const Navbar = () => {
                   </div>
                 ))}
 
-                <div className="mx-auto">
+                <div className="mx-auto ">
                   <Button
-                    additionalButtonCss="bg-blue-500 text-white px-4 py-2 justify-center item-center"
+                    additionalButtonCss="bg-blue-500 text-white px-4 py-2 justify-center item-center w-[252px]"
                     onClick={() => setIsOpen(false)}
                     text="Schedule a Demo"
                   />
