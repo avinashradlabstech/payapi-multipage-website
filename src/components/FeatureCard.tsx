@@ -16,23 +16,41 @@ interface CardData {
   card: FeatureCardData[];
 }
 
-const iconComponents: {
+const imageMap: {
   [key: string]: React.FC<{
-    width?: number;
     height?: number;
+    width?: number;
     fill?: string;
   }>;
 } = {
-  BankingCoverageIcon,
-  ConsumerPaymentIcon,
-  PersonalFinanceIcon,
+  BankingCoverageIcon: (props) => (
+    <BankingCoverageIcon
+      height={Number(props.height)}
+      width={Number(props.width)}
+      fill={String(props.width)}
+    />
+  ),
+  ConsumerPaymentIcon: (props) => (
+    <ConsumerPaymentIcon
+      height={Number(props.height)}
+      width={Number(props.width)}
+      fill={String(props.fill)}
+    />
+  ),
+  PersonalFinanceIcon: (props) => (
+    <PersonalFinanceIcon
+      height={Number(props.height)}
+      width={Number(props.width)}
+      fill={String(props.fill)}
+    />
+  ),
 };
 
 const FeatureCard: React.FC<CardData> = ({ card }) => {
   return (
     <div className="flex flex-col sm:flex-row justify-center items-center px-6 gap-12 lg:gap-[30px]">
       {card.map((item) => {
-        const IconComponent = iconComponents[item.icon];
+        const IconComponent = imageMap[item.icon];
         return (
           <div
             key={item.id}

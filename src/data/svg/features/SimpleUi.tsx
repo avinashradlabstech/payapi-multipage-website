@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 interface SvgData {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   minX?: number;
   minY?: number;
   minDW?: number;
@@ -27,7 +27,7 @@ const PhoneMockup: React.FC<SvgData> = ({
   useEffect(() => {
     const updateSize = () => {
       const screenWidth = window.innerWidth;
-console.log(screenWidth)
+
       // Adjust size based on screen width
       if (screenWidth > 0 && screenWidth < 470) {
         setDynamicWidth("350");

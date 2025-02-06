@@ -13,17 +13,26 @@ interface Feature {
 }
 
 const imageMap: {
-  [key: string]: React.FC<{ height?: number; width?: number }>;
+  [key: string]: React.FC<{
+    height?: number;
+    width?: number;
+  }>;
 } = {
-  EasyToImplement,
-  SimpleUi,
+  EasyToImplement: (props) => (
+    <EasyToImplement
+      height={String(props.height)}
+      width={String(props.width)}
+    />
+  ),
+  SimpleUi: (props) => (
+    <SimpleUi height={String(props.height)} width={String(props.width)} />
+  ),
 };
 
 const Features: React.FC<Feature> = ({ featureDetails }) => {
   return (
     <div className="flex flex-col justify-center items-center py-20 gap-20  lg:grid lg:justify-start  lg:pt-[150px] lg:mx-auto xl:px-0">
       {featureDetails.map((item, index) => {
-
         const ImageMap = imageMap[item.image];
         const isEvenIndex = index % 2 !== 0; // 2nd, 4th, 6th elements
 

@@ -1,8 +1,8 @@
 import React from "react";
 
 interface SvgData {
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   fill?: string;
 }
 

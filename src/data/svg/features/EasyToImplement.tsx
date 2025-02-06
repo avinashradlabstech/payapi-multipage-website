@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 interface SvgData {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   minX?: number;
   minY?: number;
   minDW?: number;
