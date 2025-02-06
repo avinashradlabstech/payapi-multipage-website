@@ -27,7 +27,7 @@ const imageMap: {
     <BankingCoverageIcon
       height={Number(props.height)}
       width={Number(props.width)}
-      fill={String(props.width)}
+      fill={String(props.fill)}
     />
   ),
   ConsumerPaymentIcon: (props) => (
