@@ -73,7 +73,7 @@ const Navbar = () => {
                 ))}
 
                 <Button
-                  additionalButtonCss="bg-blue-500 text-white px-4 py-2 justify-center item-center w-[252px]"
+                  additionalButtonCss="font-bold -tracking-0.115 item-center w-[252px]"
                   onClick={() => setIsOpen(false)}
                   text="Schedule a Demo"
                 />
