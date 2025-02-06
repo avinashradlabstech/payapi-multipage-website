@@ -32,7 +32,6 @@ const Navbar = () => {
               ))}
             </div>
 
-            
             <div className="flex ml-auto">
               <Button
                 additionalButtonCss="bg-blue-500 text-white px-4 py-2"
@@ -55,9 +54,7 @@ const Navbar = () => {
         <div className="fixed top-0 right-0 bg-black bg-opacity-50 flex items-start justify-end md:hidden w-full h-full">
           <div className="bg-secondary-mirage-blue p-6 rounded-lg shadow-lg max-w-xs w-full h-full ">
             <div className="flex flex-col absolute float-right clear-right mt-[48px] right-[27px]">
-              <button              
-                onClick={() => setIsOpen(false)}
-              >
+              <button onClick={() => setIsOpen(false)}>
                 <CloseIcon />
               </button>
             </div>
@@ -75,13 +72,11 @@ const Navbar = () => {
                   </div>
                 ))}
 
-                <div className="mx-auto ">
-                  <Button
-                    additionalButtonCss="bg-blue-500 text-white px-4 py-2 justify-center item-center w-[252px]"
-                    onClick={() => setIsOpen(false)}
-                    text="Schedule a Demo"
-                  />
-                </div>
+                <Button
+                  additionalButtonCss="bg-blue-500 text-white px-4 py-2 justify-center item-center w-[252px]"
+                  onClick={() => setIsOpen(false)}
+                  text="Schedule a Demo"
+                />
               </nav>
             </div>
           </div>
