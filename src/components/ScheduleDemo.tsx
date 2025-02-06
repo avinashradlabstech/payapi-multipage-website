@@ -4,6 +4,7 @@ import Button from "./Button";
 interface ScheduleDemoData {
   additionalDivCss?: string;
   heading?: string;
+  headingCss?: string;
   additionalHeadingCss?: string;
   email: string;
   additionalEmailCss?: string;
@@ -12,6 +13,7 @@ interface ScheduleDemoData {
   autoComplete?: string;
   additionalButtonCss?: string;
   subHeading?: string;
+  subHeadingCss?: String;
   contactTxt?: string;
   errorDivCss?: string;
 }
@@ -19,6 +21,7 @@ interface ScheduleDemoData {
 const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   additionalDivCss = "",
   heading,
+  headingCss = "",
   additionalHeadingCss = "",
   email,
   additionalEmailCss = "",
@@ -27,6 +30,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   additionalButtonCss = "",
   autoComplete = "off",
   subHeading,
+  subHeadingCss = "",
   contactTxt,
   errorDivCss = "",
 }) => {
@@ -71,27 +75,33 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   const isDisabled = Boolean(error) || inputValue.trim() === "";
 
   return (
-    <div className={`flex flex-col items-center ${additionalDivCss}`}>
+    <div
+      className={`flex flex-col justify-center items-center ${additionalDivCss}`}
+    >
       {heading && (
         <div
-          className={`font-serif text-center text-secondary-san-juan-blue 
-            text-32 font-normal leading-36 tracking-[-0.246px] 
-            sm:text-48 sm:leading-56 
+          className={` 
             ${additionalHeadingCss}`}
         >
-          {heading}
+          <div
+            className={`font-serif text-center text-secondary-san-juan-blue 
+            text-32 font-normal leading-36 -tracking-0.246 
+            sm:text-48 sm:leading-56 lg:-tracking-0.369px 
+            ${headingCss}`}
+          >
+            {heading}
+          </div>
         </div>
       )}
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-0 ">
-        <div className="flex flex-col justify-center w-full sm:w-auto">
+        <div className="flex flex-col sm:w-auto w-[327px] lg:max-w-[445px]">
           <input
             type="email"
             placeholder={placeholder}
             className={` pl-[1.25rem] py-[0.625rem] border-none focus:outline-none  shadow-primary
                text-sans text-[0.9375rem] text-secondary-san-juan-blue font-normal leading-[1.5625rem] tracking-[0.03em] rounded-[1.5rem]  bg-primary-link-water-white
                xs:min-w-[20.4375rem] min-h-[3rem] 
-               sm:min-w-[27.8125rem] sm:relative sm:right-[-100px] sm:font-bold
-              
+             sm:relative sm:font-bold 
               ${additionalEmailCss}
               ${isFocused ? "opacity-100 " : ""}  
               ${error ? " text-red" : "text-secondary-san-juan-blue"} `}
@@ -105,10 +115,10 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
           />
 
           {/* Error message */}
-          <div className="">
+          <div className="error-msg">
             {error && (
               <p
-                className={`text-sans text-11 text-red tracking-wider font-thin opacity-50 sm:error-lbl ${errorDivCss}`}
+                className={`text-sans text-11 text-red tracking-wider font-thin opacity-50 sm:error-lbl lg:error-lbl ${errorDivCss}`}
               >
                 {error}
               </p>
@@ -118,17 +128,19 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
 
         <Button
           type="primary"
-          additionalButtonCss={`sm:relative sm:right-[72px] ${additionalButtonCss} ${
-            isDisabled ? "opacity-50 cursor-not-allowed" : ""
+          additionalButtonCss={`sm:relative ${additionalButtonCss} ${
+            isDisabled ? "cursor-not-allowed" : ""
           }`}
           text={buttonLabel}
           onClick={handleSubmit}
-          disabled={isDisabled}
+          // disabled={isDisabled}
         />
       </div>
 
       {subHeading && (
-        <div className="font-sans text-15 font-normal text-secondary-light-san-juan-blue pt-4">
+        <div
+          className={`font-sans text-15 font-normal text-secondary-light-san-juan-blue pt-4 lg:pt-0 ${subHeadingCss}`}
+        >
           {subHeading}
           {contactTxt && (
             <span className="font-sans text-15 font-bold text-secondary-light-san-juan-blue ">

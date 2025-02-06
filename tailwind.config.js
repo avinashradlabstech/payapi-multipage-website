@@ -14,13 +14,21 @@ module.exports = {
         sans: ['"Public Sans"', "sans-serif"],
       },
       gap: {
-        31: "1.9375rem",
+        "30": "1.875rem",
+        "31": "1.9375rem",
+        "33": "2.0625rem",
+        "56": "3.5rem",
+        "80": "80px"
+
       },
       fontSize: {
         "11": "11px",
         "13": "13px",
+        "15": "15px",
+        "18": "18px",
         '24': "24px",
         "32": "32px",
+        "36": "36px",
         "48": "48px",
         "56": "56px",
         "72": "72px",
@@ -28,7 +36,9 @@ module.exports = {
       lineHeight: {
         '5': "5px",
         '25': "25px",
+        '28': "28px",
         "32": "32px",
+        "36": "36px",
         "40": "40px",
         "56": "56px",
         "72": "72px",
@@ -39,8 +49,13 @@ module.exports = {
         md: "-0.246px",
         lg: "-0.369px",
         xl: "-0.431px",
-        xxl: "-0.554px",
-        'custom': '-0.115px',
+        '0.246': '0.0154rem',
+        '0.115': '0.0071875rem',
+        '0.138': '0.138px',
+        '0.277': '0.277px',
+        '0.554': '0.554px',
+        '0.369': '0.369px',
+
       },
       colors: {
         primary: {
@@ -54,7 +69,7 @@ module.exports = {
           "light-san-juan-blue": "#6c8294"
         },
         "red": "#F00",
-        "alice-blue":"#EDF3F8"
+        "alice-blue": "#EDF3F8"
       },
       borderWidth: {
         '1': '1px',
@@ -66,10 +81,12 @@ module.exports = {
       boxShadow: {
         primary: '10px 10px 25px -10px rgba(54, 83, 107, 0.25);'
       },
+
       screens: {
-        'xs': '375px',
-        'sm': '768px',
-        'lg': '1440px',
+        xs: '490px',
+        sm: '744px',
+        lg: '1440px',
+        xl: '1920px',
       },
 
     },
@@ -83,7 +100,7 @@ module.exports = {
           'gap': '1.125rem',
         },
         ".error-lbl": {
-          "position":"absolute",
+          "position": "absolute",
           "padding": "8px 116px 0px",
         },
         "@screen sm": {
@@ -96,6 +113,10 @@ module.exports = {
           ".lg-bg-footer": {
             "left": "1050px",
             "top": "-136px",
+          },
+          ".error-lbl": {
+            "position": "absolute",
+            "padding": "5px 28px 0px",
           },
         },
 

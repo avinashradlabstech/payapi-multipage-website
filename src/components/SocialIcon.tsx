@@ -1,8 +1,8 @@
 import React from "react";
 import { socialIcons } from "../data/socialIcons";
-import FacebookIcon from "./SocialMediaLogos/FacebookIcon";
-import TwitterIcon from "./SocialMediaLogos/TwitterIcon";
-import LinkedInIcon from "./SocialMediaLogos/LinkedInIcon";
+import FacebookIcon from "../data/svg/socialmedia/FacebookIcon";
+import TwitterIcon from "../data/svg/socialmedia/TwitterIcon";
+import LinkedInIcon from "../data/svg/socialmedia/LinkedInIcon";
 
 interface SocialMediaData {
   appliedClassName?: string;
@@ -36,7 +36,7 @@ const SocialMedia: React.FC<SocialMediaData> = ({ appliedClassName = "" }) => {
                 ""
               )}
             </div>
-          );
+          )
         })}
       </div>
     </>
