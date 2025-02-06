@@ -79,7 +79,7 @@ const Navbar = () => {
                   <Button
                     additionalButtonCss="bg-blue-500 text-white px-4 py-2 justify-center item-center"
                     onClick={() => setIsOpen(false)}
-                    text="Schedule"
+                    text="Schedule a Demo"
                   />
                 </div>
               </nav>
