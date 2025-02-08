@@ -15,7 +15,7 @@ const Pricingpoints: React.FC<PointData> = ({ pointDetails }) => {
     <div className="justify-center items-center mx-auto">
       {pointDetails.map((item, index) => (
         <div key={index} className="flex  pt-2 gap-6">
-          <div className="w-6 flex items-center justify-center">
+          <div className="w-6 pt-2 flex items-center justify-center">
             {item.isChecked && <CheckIcon />}
           </div>
 
