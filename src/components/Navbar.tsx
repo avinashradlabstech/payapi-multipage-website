@@ -43,7 +43,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="sm:hidden p-2 w-6 h-6"
+          className="sm:hidden w-6 h-6"
           onClick={() => setIsOpen(true)}
         >
           <MenuIcon />
