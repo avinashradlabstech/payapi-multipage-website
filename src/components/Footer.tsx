@@ -9,12 +9,15 @@ const FooterMenu: React.FC = () => {
       <div className="footer-menu flex relative bg-secondary-mirage-blue overflow-hidden lg:px-[165px] ">
         <div className="flex flex-col items-center justify-center sm:flex-row sm:justify-between  mx-auto lg:gap-[663px]">
           <div className="flex flex-col items-center gap-6 sm:flex-row lg:flex-row lg:items-center sm:gap-[18px]">
-            <Logo
-              width="135"
-              height="38"
-              type='light'
-              appliedClassName="mobile-logo px-[120px] py-[41px] sm:px-[39px] sm:py-[31px] "
-            />
+            <a href="/">
+              {" "}
+              <Logo
+                width="135"
+                height="38"
+                type="light"
+                appliedClassName="mobile-logo px-[120px] py-[41px] sm:px-[39px] sm:py-[31px] "
+              />
+            </a>
 
             <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
               {footerMenuItems.map((item) => (

@@ -24,11 +24,11 @@ const Planpricing: React.FC<PlanDetailsData> = ({ planDetails }) => {
   // console.log(planDetails)
   return (
    
-      <div className="flex flex-col sm:flex-row justifiy-center mx-auto items-center gap-12 lg:pt-[72px]">
+      <div className="flex flex-col sm:flex-row justifiy-center mx-auto items-center gap-12 sm:px-10 sm:gap-[5px] lg:gap-6 pt-[40px] sm:pt-[69px] lg:pt-[72px]">
         {planDetails.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col pt-[40px] justify-center items-center max-w-[327px] sm:max-w-[223px] lg:max-w-[350px] lg:justify-start lg:items-start"
+            className="flex flex-col justify-center items-center max-w-[327px] sm:max-w-[223px] lg:max-w-[350px] lg:justify-start lg:items-start"
           >
             <div className="flex font-serif text-24 text-primary-dark-pink font-normal sm:leading-40 -tracking-0.185 lg:text-32 lg:text-left">
               {item.planName}

@@ -11,12 +11,13 @@ const Navbar = () => {
   return (
     <nav className="bg-alice-blue  top-0 z-50 px-6 py-10  sm:mx-auto lg:px-[165px] lg:py-10">
       <div className="container mx-auto flex justify-between items-center max-w-[327px] sm:max-w-[689px] lg:max-w-[1110px]">
-        <Logo
+       <a href="/"> <Logo
           width="135"
           height="38"
           type="dark"
           appliedClassName="mobile-logo sm:pr-[66px] flex"
         />
+        </a>
         <div className="hidden sm:flex flex-col items-center sm:flex-row lg:flex-row lg:items-center sm:gap-[18px]">
           <div className="flex sm:gap-[86px] lg:gap-[506px]">
             <div className="flex flex-col items-center justify-center gap-10 sm:flex-row">

@@ -15,10 +15,11 @@ const Pricing: React.FC = () => {
 
         <div className="lg:px-[165px] mx-auto">
           <Pageheading heading={pricing.heading} />
+
           <PricingPlan planDetails={pricing.planDetails} />
         </div>
 
-        <div className="flex flex-col mx-auto pb-20 sm:flex-row sm:justify-between sm:px-[161px] sm:py-[93px] lg:px-[165px]">
+        <div className="flex flex-col mx-auto pb-20 sm:flex-row sm:justify-between  sm:py-[93px] lg:px-[165px]">
           <ScheduleDemo
             additionalDivCss="py-6 gap-4 sm:gap-10 lg:flex-row lg:gap-[220px] "
             additionalHeadingCss="flex lg:w-[445px] "
