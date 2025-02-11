@@ -12,16 +12,16 @@ import home from "../data/home";
 const Contact: React.FC = () => {
   return (
     <>
-      <div className="flex flex-col bg-alice-blue">
+      <div className=" bg-alice-blue">
         <Navbar />
 
-        <div className="lg:mx-[165px]">
+        <div className="page-heading-section lg:mx-[165px]">
           <Pageheading
             heading={contact.heading}
             additionalCss="lg:max-w-[730px]"
           />
         </div>
-        <div className="flex flex-col lg:px-[165px] lg:flex-row lg:pt-[43px] lg:gap-[125px] lg:items-center">
+        <div className="contact-form-we-work-section border border-red flex flex-col lg:px-[165px] lg:flex-row lg:pt-[43px] lg:gap-[125px] lg:items-center">
           <ContactForm
             buttonLabel="Submit"
             additionalDivCss="lg:flex-start lg:items-start"
@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
             heading={
               "Join the thousands of innovators already building with us"
             }
-            weWorkClass={"lg:flex-col lg-gap-[30px]"}
+            weWorkClass={"lg:flex-col lg-gap-[30px] sm:mx-auto"}
             clientLogo={home.weWorkWith.clientLogo}
             description={""}
             headingTop={true}
@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
           />
         </div>
 
-        <div className="flex flex-col mx-auto pb-20 sm:flex-row sm:justify-between sm:px-[161px] sm:py-[93px] lg:px-[165px]">
+        <div className="border border-red flex flex-col mx-auto pb-20 sm:flex-row sm:justify-between sm:px-[161px] sm:py-[93px] lg:px-[165px]">
           <ScheduleDemo
             additionalDivCss="py-6 gap-4 sm:gap-10 lg:flex-row lg:gap-[220px] "
             additionalHeadingCss="flex lg:w-[445px] "

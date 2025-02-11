@@ -53,6 +53,7 @@ const TextBox: React.FC<TextBoxData> = ({
         onBlur={() => setIsFocused(false)}
         onChange={handleChange}
         autoComplete={autoComplete}
+        
       />
 
       {/* Error message */}

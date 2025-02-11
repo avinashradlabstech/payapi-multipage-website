@@ -10,7 +10,7 @@ import Navbar from "../components/Navbar";
 const Home: React.FC = () => {
   return (
     <>
-      <div className="flex flex-col  bg-alice-blue">
+       <div className="bg-alice-blue">
         <Navbar />
         <div className="flex flex-col flex-shrink-0 sm:gap-[22px] lg:px-[164px]  lg:flex-row-reverse mx-auto lg:gap-[125px]">
           <div className="flex flex-col lg:flex-row px-6 gap-9 justify-center items-center lg:px-0 lg:justify-start lg:gap-[125px] mx-auto h-auto">

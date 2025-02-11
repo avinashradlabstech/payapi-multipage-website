@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 interface TextAreaData {
-  rows?: number;
-  cols?: number;
   id: string;
   name: string;
+  rows?: number;
+  cols?: number;
   placeholder: string;
-  value?: string;
+  value: string;
   className?: string;
   validation?: (value: string) => string | undefined;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onBlur: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
 }
 
 const TextArea: React.FC<TextAreaData> = ({
@@ -20,27 +21,26 @@ const TextArea: React.FC<TextAreaData> = ({
   value,
   className,
   validation,
+  onChange,
+  onBlur,
 }) => {
-  const [isFocused, setIsFocused] = useState<boolean>(false); 
-  const [inputValue, setInputValue] = useState<string | undefined>(value); 
+  const [isFocused, setIsFocused] = useState<boolean>(false);
   const [error, setError] = useState<string | undefined>("");
 
-  // Handle input change & validation
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const newValue = e.target.value;
-    setInputValue(newValue);
-
+  
+  const handleBlur = (e: React.FocusEvent<HTMLTextAreaElement>) => {
     if (validation) {
-      const validateError = validation(newValue);
-      setError(validateError);
+      setError(validation(e.target.value));
     }
+    setIsFocused(false);
+    onBlur(e); 
   };
 
   return (
     <div className="flex flex-col">
       <textarea
-        rows={rows || 5} 
-        cols={cols || 25} 
+        rows={rows || 5}
+        cols={cols || 25}
         placeholder={placeholder}
         className={`border-b outline-none px-2 py-1 resize-none
             text-sans text-[0.9375rem] text-secondary-san-juan-blue font-normal leading-[1.5625rem] tracking-[0.03em] pl-[1.25rem] pb-[1.062rem]
@@ -49,24 +49,12 @@ const TextArea: React.FC<TextAreaData> = ({
             ${error ? "border-red text-red" : "border-secondary-san-juan-blue text-secondary-san-juan-blue"}`}
         id={id}
         name={name}
-        value={inputValue}
+        value={value}
         onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
-        onChange={handleChange}
-      />      
-      {/* Error message */}
-      {error && (
-        <p className="text-sans text-11 text-red tracking-wide font-thin opacity-50 pl-[1.25rem] mt-[0.875rem]">
-          {error}
-        </p>
-      )}
+        onBlur={handleBlur}
+        onChange={onChange} 
+      />
 
-      {/* Custom placeholder color based on error */}
-      <style>{`
-        textarea::placeholder {
-          color: ${error ? "#F00" : "#36536B"};          
-        }
-      `}</style>
     </div>
   );
 };

@@ -48,7 +48,6 @@ const WeWorkWith: React.FC<WeWorkWithData> = ({
 }) => {
   return (
     <>
-      {/* We Work With Section*/}
       <div
         className={`we-work-with-section flex flex-col lg:flex-row-reverse py-20  ${weWorkClass}`}
       >

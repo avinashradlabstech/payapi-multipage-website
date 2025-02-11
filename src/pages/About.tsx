@@ -12,7 +12,7 @@ import AboutImage from "../components/about/aboutImage";
 const About: React.FC = () => {
   return (
     <>
-      <div className="flex flex-col bg-alice-blue">
+      <div className="bg-alice-blue">
         <Navbar />
 
         <div className="lg:mx-[260px]">
