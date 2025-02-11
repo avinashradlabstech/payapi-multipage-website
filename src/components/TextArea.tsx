@@ -45,7 +45,7 @@ const TextArea: React.FC<TextAreaData> = ({
         className={`border-b outline-none px-2 py-1 resize-none
             text-sans text-[0.9375rem] text-secondary-san-juan-blue font-normal leading-[1.5625rem] tracking-[0.03em] pl-[1.25rem] pb-[1.062rem]
             ${className}
-            ${isFocused ? "opacity-1" : ""}    
+            ${isFocused ? "opacity-1" : "opacity-50"}    
             ${error ? "border-red text-red" : "border-secondary-san-juan-blue text-secondary-san-juan-blue"}`}
         id={id}
         name={name}
@@ -64,7 +64,7 @@ const TextArea: React.FC<TextAreaData> = ({
       {/* Custom placeholder color based on error */}
       <style>{`
         textarea::placeholder {
-          color: ${error ? "#F00" : "#36536b"};
+          color: ${error ? "#F00" : "#36536B"};          
         }
       `}</style>
     </div>

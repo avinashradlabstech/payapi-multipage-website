@@ -15,7 +15,9 @@ const Pricing: React.FC = () => {
 
         <div className="lg:px-[165px] mx-auto">
           <Pageheading heading={pricing.heading} />
+        </div>
 
+        <div className="lg:px-[165px] mx-auto">
           <PricingPlan planDetails={pricing.planDetails} />
         </div>
 

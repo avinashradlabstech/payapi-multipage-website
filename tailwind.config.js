@@ -110,6 +110,10 @@ module.exports = {
             "top": "-3.4375rem",
             "left": "279px",
           },
+          ".cform-error-lbl": {
+            "position": "absolute",
+            "padding": "8px 0px 0px",
+          },
         },
         "@screen lg": {
           ".lg-bg-footer": {

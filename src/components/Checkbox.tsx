@@ -4,6 +4,7 @@ interface CheckboxData {
   label: string;
   checked?: boolean;
   disabled?: boolean;
+  className?: string;
   onChange: (checked: boolean) => void;
 }
 
@@ -11,6 +12,7 @@ const Checkbox: React.FC<CheckboxData> = ({
   label,
   checked,
   disabled,
+  className,
   onChange,
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
@@ -27,7 +29,7 @@ const Checkbox: React.FC<CheckboxData> = ({
 
   return (
     <>
-      <label className="flex items-center space-x-2 ">
+      <label className="flex items-center gap-[26px]">
         <input
           type="checkbox"
           checked={checked}
@@ -36,11 +38,12 @@ const Checkbox: React.FC<CheckboxData> = ({
           className="appearance-none w-6 h-6 hidden"
         />
         <span
-          className={`w-6 h-6 flex-shrink-0 flex justify-center items-center ${
-            isChecked
-              ? "bg-primary-dark-pink "
-              : "bg-secondary-san-juan-blue opacity-25"
-          }
+          className={`w-6 h-6 flex-shrink-0 flex justify-center items-center 
+            ${
+              isChecked
+                ? "bg-primary-dark-pink "
+                : "bg-secondary-san-juan-blue opacity-25"
+            }
          ${disabled ? "bg-secondary-san-juan-blue opacity-5" : ""}
         `}
         >
@@ -61,7 +64,11 @@ const Checkbox: React.FC<CheckboxData> = ({
             </svg>
           )}
         </span>
-        <span>{label}</span>
+        <span
+          className={`text-sans text-15 text-secondary-san-juan-blue font-normal leading-25 -tracking-0.115 w-[277px] lg:w-[395px] ${className ? className : ""}`}
+        >
+          {label}
+        </span>
       </label>
     </>
   );

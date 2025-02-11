@@ -21,17 +21,19 @@ const AboutImage: React.FC<AboutImageData> = ({
           ${imageUrl}/mobile/${imageName} 449w, 
           ${imageUrl}/tablet/${imageName} 769w, 
           ${imageUrl}/desktop/${imageName} 1440w
+          ${imageUrl}/desktop/${imageName} 1920w
         `}
         sizes={`
           (max-width: 449px) 449px, 
           (max-width: 769px) 769px, 
           (max-width: 1440px) 1440px, 
+          (max-width: 1920px) 1920px, 
           100vw
         `}
         alt={imageAlt}
         width="100%"
         height="auto"
-        style={{ width: "100%", height: "auto", maxWidth: "1440px" }}
+        style={{ width: "100%", height: "auto", maxWidth: "1920px" }}
         loading="lazy"
       />
     </div>

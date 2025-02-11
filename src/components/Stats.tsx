@@ -11,7 +11,7 @@ interface Stats {
 
 const Stats: React.FC<Stats> = ({ statData }) => {
   return (
-    <div className="flex flex-col sm:flex-row justifiy-center items-center px-6 gap-8 sm:gap-[10px] lg:gap-[30px] sm:w-[689px] sm:py-[64px] lg:mx-[165px] lg:w-[1110px]">
+    <div className="flex flex-col sm:flex-row justifiy-center items-center px-6 py-12 w-[327px] gap-8 sm:gap-[10px] lg:gap-[30px] sm:w-[689px] sm:py-[64px] lg:mx-[165px] lg:w-[1110px]">
       <div className="pt-6 w-full sm:hidden">
         <hr className="border-t border-secondary-san-juan-blue opacity-25 w-full " />
       </div>

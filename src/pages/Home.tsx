@@ -35,10 +35,14 @@ const Home: React.FC = () => {
         </div>
 
         <WeWorkWith
+          weWorkClass={"items-center justify-center bg-secondary-mirage-blue gap-56 lg-gap-[12px]"}
           heading={home.weWorkWith.header}
           description={home.weWorkWith.description}
           buttonTxt={home.weWorkWith.buttonTxt}
           clientLogo={home.weWorkWith.clientLogo}
+          headingCss="text-primary-link-water-white"
+          iconFill="text-primary-link-water-white"
+          headingTop={false}
         ></WeWorkWith>
 
         <Features featureDetails={home.features} />
