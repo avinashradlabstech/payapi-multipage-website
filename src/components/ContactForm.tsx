@@ -165,8 +165,7 @@ const ContactForm: React.FC<ContactFormData> = ({
     setErrors(validationErrors);
     console.log(Object.keys(validationErrors).length);
     if (Object.keys(validationErrors).length === 0) {
-      console.log("No error");
-      console.log("Form submitted successfully!", formValues);
+     
       setSubmissionSuccess(true);
       setFormValues({
         name: "",

@@ -8,8 +8,8 @@ interface TextAreaData {
   value: string;
   className?: string;
   validation?: (value: string) => string | undefined;
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  onBlur: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
 }
 
 const TextArea: React.FC<TextAreaData> = ({
@@ -27,13 +27,14 @@ const TextArea: React.FC<TextAreaData> = ({
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [error, setError] = useState<string | undefined>("");
 
-  
   const handleBlur = (e: React.FocusEvent<HTMLTextAreaElement>) => {
     if (validation) {
       setError(validation(e.target.value));
     }
     setIsFocused(false);
-    onBlur(e); 
+    if (onBlur) {
+      onBlur(e);
+    }
   };
 
   return (
@@ -52,9 +53,8 @@ const TextArea: React.FC<TextAreaData> = ({
         value={value}
         onFocus={() => setIsFocused(true)}
         onBlur={handleBlur}
-        onChange={onChange} 
+        onChange={onChange}
       />
-
     </div>
   );
 };

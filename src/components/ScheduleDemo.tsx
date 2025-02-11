@@ -35,6 +35,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   errorDivCss = "",
 }) => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
+  const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>(""); // Initialize with empty string
   const [error, setError] = useState<string | undefined>("");
 
@@ -68,7 +69,8 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
     if (validateError) {
       setError(validateError);
     } else {
-      setError("");
+      setSubmissionSuccess(true);
+      setInputValue(""); 
     }
   };
 
@@ -136,6 +138,23 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
           // disabled={isDisabled}
         />
       </div>
+
+      {submissionSuccess && (
+        <div className="fixed inset-0 flex justify-center items-center bg-gray-700 bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-green-600 text-lg font-semibold">Success!</h2>
+            <p className="text-sans text-15 text-secondary-san-juan-blue font-normal leading-25">
+              Your message has been submitted successfully.
+            </p>
+            <button
+              className="mt-4 bg-primary-dark-pink text-white px-4 py-2 rounded-md"
+              onClick={() => setSubmissionSuccess(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {subHeading && (
         <div

@@ -99,6 +99,7 @@ const Component: React.FC = () => {
             id="message"
             name="message"
             validation={requiredMessage}
+            value=""            
           />
         </div>
         <p className=" px-5 py-5">Schedule a Demo</p>
