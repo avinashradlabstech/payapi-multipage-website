@@ -13,7 +13,7 @@ interface ScheduleDemoData {
   autoComplete?: string;
   additionalButtonCss?: string;
   subHeading?: string;
-  subHeadingCss?: String;
+  subHeadingCss?: string;
   contactTxt?: string;
   errorDivCss?: string;
 }
