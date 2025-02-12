@@ -24,16 +24,16 @@ const Planpricing: React.FC<PlanDetailsData> = ({ planDetails }) => {
   // console.log(planDetails)
   return (
    
-      <div className="flex flex-col sm:flex-row justifiy-center mx-auto items-center gap-12 sm:px-10 sm:gap-[5px] lg:gap-6 pt-[40px] sm:pt-[69px] lg:pt-[72px]">
+      <div className="flex flex-col sm:flex-row justifiy-center mx-auto items-center gap-12 sm:gap-5 lg:gap-6 pt-10 sm:pt-69 lg:pt-72">
         {planDetails.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col justify-center items-center max-w-[327px] sm:max-w-[223px] lg:max-w-[350px] lg:justify-start lg:items-start"
+            className="flex flex-col justify-center items-center max-w-327 sm:max-w-223 lg:max-w-350 lg:justify-start lg:items-start"
           >
-            <div className="flex font-serif text-24 text-primary-dark-pink font-normal sm:leading-40 -tracking-0.185 lg:text-32 lg:text-left">
+            <div className="flex font-serif text-24 text-primary-dark-pink font-normal sm:leading-10 -tracking-0.185 lg:text-32 lg:text-left">
               {item.planName}
             </div>
-            <div className="flex font-sans text-15 text-secondary-light-san-juan-blue font-thin leading-28 pt-[17px] text-center lg:text-left">
+            <div className="flex font-sans text-15 text-secondary-light-san-juan-blue font-thin leading-28 pt-17 text-center lg:text-left">
               {item.planDescription}
             </div>
             <div className="flex font-serif text-secondary-san-juan-blue text-56 font-normal leading-72 -tracking-0.431 sm:text-48 sm:-tracking-0.369">

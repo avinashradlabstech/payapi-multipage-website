@@ -10,32 +10,34 @@ import Navbar from "../components/Navbar";
 const Home: React.FC = () => {
   return (
     <>
-       <div className="bg-alice-blue">
+      <div className="bg-alice-blue">
         <Navbar />
-        <div className="flex flex-col flex-shrink-0 sm:gap-[22px] lg:px-[164px]  lg:flex-row-reverse mx-auto lg:gap-[125px]">
-          <div className="flex flex-col lg:flex-row px-6 gap-9 justify-center items-center lg:px-0 lg:justify-start lg:gap-[125px] mx-auto h-auto">
-            <PhoneMockup width="400" height="200" />
+        <div className="flex flex-col flex-shrink-0 sm:gap-22 lg:px-165  lg:flex-row-reverse  justify-center items-center lg:gap-208">
+          <div className="flex flex-col lg:flex-row px-6 gap-9 justify-center items-center lg:px-0 lg:justify-start h-auto">
+            <PhoneMockup width="263" height="500" />
           </div>
           <ScheduleDemo
             additionalDivCss="gap-6 py-6 lg:items-start lg:gap-4"
-            additionalHeadingCss="max-w-[327px] sm:max-w-[573px] lg:min-h-[243px] lg:pb-[5px]"
+            additionalHeadingCss="max-w-[327px] sm:max-w-[573px] lg:min-h-[243px] lg:pb-5"
             heading="Start building with our APIs for absolutely free."
             headingCss="lg:text-72 lg:leading-72 lg:-tracking-0.554 lg:text-left"
             email="demoEmail1"
             additionalEmailCss=""
             placeholder="Enter email address"
             buttonLabel="Schedule a Demo"
-            additionalButtonCss="sm:right-[72px]"
+            additionalButtonCss="sm:right-72"
             autoComplete="off"
             subHeading="Have any questions?"
-            subHeadingCss="lg:pl-[27px]"
+            subHeadingCss="lg:pl-27"
             errorDivCss="lg:text-left"
             contactTxt=" Contact Us"
           />
         </div>
 
         <WeWorkWith
-          weWorkClass={"items-center justify-center bg-secondary-mirage-blue gap-56 lg-gap-[12px]"}
+          weWorkClass={
+            "items-center justify-center bg-secondary-mirage-blue gap-56"
+          }
           heading={home.weWorkWith.header}
           description={home.weWorkWith.description}
           buttonTxt={home.weWorkWith.buttonTxt}
@@ -47,13 +49,11 @@ const Home: React.FC = () => {
 
         <Features featureDetails={home.features} />
 
-        <div className="pb-20">
-          <FeatureCard card={home.cards} />
-        </div>
+        <FeatureCard card={home.cards} />
 
-        <div className="flex flex-col mx-auto pb-20 sm:flex-row sm:justify-between sm:px-[161px] sm:py-[93px] lg:px-[165px]">
+        <div className=" flex flex-col mx-auto pb-20 sm:flex-row justify-center items-center sm:px-100 sm:py-93 lg:px-96 lg:max-w-1110">
           <ScheduleDemo
-            additionalDivCss="py-6 gap-4 sm:gap-10 lg:flex-row lg:gap-[220px] "
+            additionalDivCss="py-6 gap-4 sm:gap-10 lg:flex-row lg:justify-around mx-auto lg:gap-220"
             additionalHeadingCss="flex lg:w-[445px] "
             heading="Ready to start?"
             email="demoEmail2"

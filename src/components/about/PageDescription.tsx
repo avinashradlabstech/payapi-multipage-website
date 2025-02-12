@@ -15,7 +15,7 @@ const Pricingpoints: React.FC<PageData> = ({ pageData }) => {
       {pageData.map((item, index) => (
         <div key={index} className="flex flex-col sm:flex-row gap-4 sm:max-w-[689px] lg:max-w-[920px]  sm:gap-[10px] lg:gap-[30px] sm:mx-auto">
           <div className="flex flex-col justify-center items-center mx-auto max-w-[255px] sm:w-[223px] lg:max-w-[255px] sm:justify-start sm:items-start  lg:m-0 ">
-            <div className="font-serif text-secondary-san-juan-blue text-24 font-normal leading-32 text-center -tracking-0.185 sm:text-32 sm:leading-40 sm:tracking-0.246  sm:text-left" >
+            <div className="font-serif text-secondary-san-juan-blue text-24 font-normal leading-32 text-center -tracking-0.185 sm:text-32 sm:leading-10 sm:tracking-0.246  sm:text-left" >
               {item.heading}
             </div>
           </div>

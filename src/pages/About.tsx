@@ -15,14 +15,11 @@ const About: React.FC = () => {
       <div className="bg-alice-blue">
         <Navbar />
 
-        <div className="lg:mx-[260px]">
-          <Pageheading
-            heading={about.heading}
-            additionalCss="lg:max-w-[730px]"
-          />
+        <div className="page-heading-section  mx-auto lg:max-w-1110">
+          <Pageheading heading={about.heading} additionalCss="lg:max-w-730 lg:ml-95" />
         </div>
 
-        <div className="lg:px-[260px] pt-[40px] sm:pt-[54px]">
+        <div className="lg:px-260 pt-40 sm:pt-54">
           <PageDescription pageData={about.keypoints1} />
         </div>
 
@@ -36,17 +33,17 @@ const About: React.FC = () => {
           <Stats statData={about.stats} />
         </div>
 
-        <div className="lg:px-[165px] pt-[40px] sm:pt-0">
+        <div className="lg:px-165 pt-40 sm:pt-0">
           <PageDescription pageData={about.keypoints2} />
         </div>
 
-        <div className="flex flex-col mx-auto pb-20 sm:flex-row sm:justify-between sm:px-[161px] sm:py-[93px] lg:px-[165px]">
+        <div className=" flex flex-col mx-auto pb-20 sm:flex-row justify-center items-center sm:px-161 sm:py-93 lg:max-w-1110">
           <ScheduleDemo
-            additionalDivCss="py-6 gap-4 sm:gap-10 lg:flex-row lg:gap-[220px] "
-            additionalHeadingCss="flex lg:w-[445px] "
+            additionalDivCss="py-6 gap-4 sm:gap-10 lg:flex-row lg:justify-around mx-auto lg:gap-220"
+            additionalHeadingCss="flex lg:w-445 "
             heading="Ready to start?"
             email="demoEmail2"
-            additionalEmailCss="sm:left-[33px]"
+            additionalEmailCss="sm:left-33"
             placeholder="Enter email address"
             buttonLabel="Schedule a Demo"
             autoComplete="off"

@@ -50,10 +50,10 @@ const EasyToImplement: React.FC<SvgData> = ({
         setDynamicWidth("445");
         setDynamicHeight("100%");
 
-        setDynamicMinX(50);
+        setDynamicMinX(0);
         setDynamicMinY(0);
         setDynamicMinWidth(445);
-        setDynamicMinHeight(350);
+        setDynamicMinHeight(284);
       }
     };
 

@@ -55,13 +55,13 @@ const PhoneMockup: React.FC<SvgData> = ({
         setDynamicMinHeight(600);
       }
       else if (screenWidth >= 1440) {
-        setDynamicWidth("500");
+        setDynamicWidth("419");
         setDynamicHeight("100%");
 
-        setDynamicMinX(20);
+        setDynamicMinX(0);
         setDynamicMinY(0);
-        setDynamicMinWidth(500);
-        setDynamicMinHeight(600);
+        setDynamicMinWidth(419);
+        setDynamicMinHeight(660);
       }
     };
 

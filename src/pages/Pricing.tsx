@@ -10,24 +10,24 @@ import PricingPlan from "../components/PricingPlan";
 const Pricing: React.FC = () => {
   return (
     <>
-       <div className="bg-alice-blue">
+       <div className="bg-alice-blue ">
         <Navbar />
 
-        <div className="page-heading-section lg:px-[165px] mx-auto">
-          <Pageheading heading={pricing.heading} />
+        <div className="page-heading-section  mx-auto lg:max-w-1110">
+          <Pageheading heading={pricing.heading} additionalCss="lg:max-w-546 " />
         </div>
 
-        <div className="pricing-plan-section lg:px-[165px] mx-auto">
+        <div className="pricing-plan-section  mx-auto lg:max-w-1110">
           <PricingPlan planDetails={pricing.planDetails} />
         </div>
 
-        <div className="schedule-demo-section flex flex-col  pb-20 sm:flex-row sm:justify-between  sm:py-[93px] lg:px-[165px]">
+        <div className=" flex flex-col mx-auto pb-20 sm:flex-row justify-center items-center sm:px-161 sm:py-93 lg:max-w-1110">
           <ScheduleDemo
-            additionalDivCss="py-6 gap-4 sm:gap-10  sm:mx-auto lg:flex-row lg:gap-[220px] "
-            additionalHeadingCss="flex lg:w-[445px] "
+            additionalDivCss="py-6 gap-4 sm:gap-10 lg:flex-row lg:justify-around mx-auto lg:gap-220"
+            additionalHeadingCss="flex lg:w-445"
             heading="Ready to start?"
             email="demoEmail2"
-            additionalEmailCss="sm:left-[33px]"
+            additionalEmailCss="sm:left-33"
             placeholder="Enter email address"
             buttonLabel="Schedule a Demo"
             autoComplete="off"

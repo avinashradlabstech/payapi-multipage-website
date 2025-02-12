@@ -70,7 +70,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
       setError(validateError);
     } else {
       setSubmissionSuccess(true);
-      setInputValue(""); 
+      setInputValue("");
     }
   };
 
@@ -89,45 +89,53 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
             className={`font-serif text-center text-secondary-san-juan-blue 
             text-32 font-normal leading-36 -tracking-0.246 
             sm:text-48 sm:leading-56 lg:-tracking-0.369px 
+           
             ${headingCss}`}
           >
             {heading}
           </div>
         </div>
       )}
-      <div className="flex flex-col sm:flex-row gap-4 sm:gap-0 ">
-        <div className="flex flex-col sm:w-auto w-[327px] lg:max-w-[445px]">
-          <input
-            type="email"
-            placeholder={placeholder}
-            className={` pl-[1.25rem] py-[0.625rem] border-none focus:outline-none  shadow-primary
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-0 sm:w-auto w-327 lg:max-w-445">
+        {/* Error message */}
+        <div className="error-msg hidden sm:block">
+          {error && (
+            <p
+              className={`text-sans text-11 text-red tracking-wider font-thin opacity-50 error-lbl ${errorDivCss}`}
+            >
+              {error}
+            </p>
+          )}
+        </div>
+
+        <input
+          type="email"
+          placeholder={placeholder}
+          className={` pl-[1.25rem] py-[0.625rem] border-none focus:outline-none  shadow-primary
                text-sans text-[0.9375rem] text-secondary-san-juan-blue font-normal leading-[1.5625rem] tracking-[0.03em] rounded-[1.5rem]  bg-primary-link-water-white
                xs:min-w-[20.4375rem] min-h-[3rem] 
              sm:relative sm:font-bold 
               ${additionalEmailCss}
               ${isFocused ? "opacity-100 " : ""}  
               ${error ? " text-red" : "text-secondary-san-juan-blue"} `}
-            id={email}
-            name={email}
-            value={inputValue}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            onChange={handleChange}
-            autoComplete={autoComplete}
-          />
-
-          {/* Error message */}
-          <div className="error-msg">
-            {error && (
-              <p
-                className={`text-sans text-11 text-red tracking-wider font-thin opacity-50 sm:error-lbl lg:error-lbl ${errorDivCss}`}
-              >
-                {error}
-              </p>
-            )}
-          </div>
+          id={email}
+          name={email}
+          value={inputValue}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          onChange={handleChange}
+          autoComplete={autoComplete}
+        />
+         {/* Error message */}
+         <div className="error-msg sm:hidden">
+          {error && (
+            <p
+              className={`text-sans text-11 text-red tracking-wider font-thin opacity-50 text-center ${errorDivCss}`}
+            >
+              {error}
+            </p>
+          )}
         </div>
-
         <Button
           type="primary"
           additionalButtonCss={`sm:relative ${additionalButtonCss} ${
