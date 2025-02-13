@@ -2,7 +2,7 @@ import React from "react";
 import { footerMenuItems } from "../data/menuItems";
 import Logo from "./Logo";
 import SocialMedia from "./SocialIcon";
-import PatternCircle from "../data/svg/background/PatternCircle";
+//import PatternCircle from "../data/svg/background/PatternCircle";
 
 const FooterMenu: React.FC = () => {
   return (

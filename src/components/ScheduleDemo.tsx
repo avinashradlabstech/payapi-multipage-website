@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
-import PatternCircle from "../data/svg/background/PatternCircle";
+//import PatternCircle from "../data/svg/background/PatternCircle";
 
 interface ScheduleDemoData {
   additionalDivCss?: string;
