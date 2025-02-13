@@ -47,13 +47,13 @@ const EasyToImplement: React.FC<SvgData> = ({
         setDynamicMinWidth(450);
         setDynamicMinHeight(347);
       } else if (screenWidth >= 1024) {
-        setDynamicWidth("445");
+        setDynamicWidth("605");
         setDynamicHeight("100%");
 
         setDynamicMinX(0);
         setDynamicMinY(0);
-        setDynamicMinWidth(445);
-        setDynamicMinHeight(284);
+        setDynamicMinWidth(605);
+        setDynamicMinHeight(444);
       }
     };
 

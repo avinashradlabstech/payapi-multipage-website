@@ -49,7 +49,7 @@ const WeWorkWith: React.FC<WeWorkWithData> = ({
   return (
     <>
       <div
-        className={`we-work-with-section flex flex-col lg:flex-row-reverse py-20 mx-auto  ${weWorkClass}`}
+        className={`we-work-with-section flex flex-col lg:flex-row-reverse py-20 mx-auto   ${weWorkClass}`}
       >
         {headingTop === true && (
           <div className="flex flex-col px-6 py-10 gap-4 sm:gap-8 lg:px-0">
@@ -65,7 +65,7 @@ const WeWorkWith: React.FC<WeWorkWithData> = ({
         )}
         {/* Client Logos */}
         <div className="flex ">
-          <div className="lg:flex-row grid grid-cols-2 grid-flow-row sm:grid-cols-3 justify-center  mx-auto  items-center gap-37 justify-items-center">
+          <div className="lg:flex-row grid grid-cols-2 grid-flow-row sm:grid-cols-3 justify-center  mx-auto  items-center gap-37 justify-items-center lg:max-w-536">
             {clientLogo.map((item) => {
               const IconComponent = iconComponents[item.name];
               return (
@@ -81,7 +81,7 @@ const WeWorkWith: React.FC<WeWorkWithData> = ({
           </div>
         </div>
         {headingTop === false && (
-          <div className="flex flex-col px-6 py-10 gap-4 sm:gap-8">
+          <div className="flex flex-col py-10 gap-4 sm:gap-8 flex-shrink-0" >
             <div className="flex flex-col gap-6 justify-center items-center lg:justify-start lg:items-start sm:max-w-456 lg:max-w-445">
               {/* Heading */}
               <div className="text-center lg:text-left text-primary-link-water-white font-serif text-32 font-normal leading-9 tracking-tightest lg:text-48 lg:leading-56">

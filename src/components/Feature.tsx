@@ -31,7 +31,7 @@ const imageMap: {
 
 const Features: React.FC<Feature> = ({ featureDetails }) => {
   return (
-    <div className="flex flex-col py-20 gap-20  lg:pt-150 lg:px-165 lg:mx-auto xl:px-0 ">
+    <div className="flex flex-col py-20 gap-20  lg:pt-150 lg:mx-auto max-w-1110 ">
       {featureDetails.map((item, index) => {
         const ImageMap = imageMap[item.image];
         const isEvenIndex = index % 2 !== 0; // 2nd, 4th, 6th elements
