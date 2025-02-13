@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "./Link";
-import PatternCircle from "../data/svg/background/PatternCircle";
+//import PatternCircle from "../data/svg/background/PatternCircle";
 import {
   GoogleIcon,
   HpIcon,
@@ -86,9 +86,9 @@ const WeWorkWith: React.FC<WeWorkWithData> = ({
         </div>
         {headingTop === false && (
           <div className="flex flex-col py-10 gap-4 sm:gap-8 flex-shrink-0 overflow-hidden">
-            <div className="absolute top-[185px] w-[90vw] h-[90vw] max-w-[780px] max-h-[780px] sm:top-[30.0rem] sm:left-[0rem] lg:top-[27.5rem] lg:left-[-11.0625rem]">
+            {/* <div className="absolute top-[185px] w-[90vw] h-[90vw] max-w-[780px] max-h-[780px] sm:top-[30.0rem] sm:left-[0rem] lg:top-[27.5rem] lg:left-[-11.0625rem]">
               <PatternCircle className="absolute"/>
-            </div>
+            </div> */}
             <div className="flex flex-col gap-6 justify-center items-center lg:justify-start lg:items-start sm:max-w-456 lg:max-w-445">
               {/* Heading */}
               <div className="text-center lg:text-left text-primary-link-water-white font-serif text-32 font-normal leading-9 tracking-tightest lg:text-48 lg:leading-56">
