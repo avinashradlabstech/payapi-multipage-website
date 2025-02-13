@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import PatternCircle from "../data/svg/background/PatternCircle";
 
 interface ScheduleDemoData {
   additionalDivCss?: string;
@@ -79,7 +80,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   return (
     <div
       className={`flex flex-col justify-center items-center ${additionalDivCss}`}
-    >
+    >      
       {heading && (
         <div
           className={` 
@@ -126,8 +127,8 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
           onChange={handleChange}
           autoComplete={autoComplete}
         />
-         {/* Error message */}
-         <div className="error-msg sm:hidden">
+        {/* Error message */}
+        <div className="error-msg sm:hidden">
           {error && (
             <p
               className={`text-sans text-11 text-red tracking-wider font-thin opacity-50 text-center ${errorDivCss}`}

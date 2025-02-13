@@ -30,7 +30,6 @@ const EasyToImplement: React.FC<SvgData> = ({
 
       // Adjust size based on screen width
       if (screenWidth > 0 && screenWidth < 470) {
-        // 50 0 440 320
         setDynamicWidth("320");
         setDynamicHeight("100%");
 
@@ -50,22 +49,20 @@ const EasyToImplement: React.FC<SvgData> = ({
         setDynamicWidth("605");
         setDynamicHeight("100%");
 
-        setDynamicMinX(0);
+        setDynamicMinX(50);
         setDynamicMinY(0);
         setDynamicMinWidth(605);
         setDynamicMinHeight(444);
       }
     };
 
-    // Call updateSize when component mounts and whenever window is resized
-    updateSize(); // Initial size update
+    updateSize();
     window.addEventListener("resize", updateSize);
 
-    // Clean up the event listener when the component is unmounted
     return () => {
       window.removeEventListener("resize", updateSize);
     };
-  }, []); // Empty dependency array ensures this effect runs once on mount
+  }, []);
 
   return (
     <svg
@@ -82,7 +79,7 @@ const EasyToImplement: React.FC<SvgData> = ({
           width="159.6%"
           height="193.3%"
           filterUnits="objectBoundingBox"
-          id="a"
+          id="easyto-1"
         >
           <feOffset
             dx="25"
@@ -100,12 +97,12 @@ const EasyToImplement: React.FC<SvgData> = ({
             in="shadowBlurOuter1"
           />
         </filter>
-        <rect id="b" x="0" y="0" width="445" height="284" rx="8" />
+        <rect id="easyto-b" x="0" y="0" width="445" height="284" rx="8" />
       </defs>
       <g fill="none" fill-rule="evenodd">
         <g transform="translate(55 55)">
-          <use fill="#000" filter="url(#a)" xlinkHref="#b" />
-          <use fill="#1B262F" xlinkHref="#b" />
+          <use fill="#000" filter="url(#easyto-1)" xlinkHref="#easyto-b" />
+          <use fill="#1B262F" xlinkHref="#easyto-b" />
         </g>
         <path d="M63 55h429a8 8 0 018 8v32H55V63a8 8 0 018-8z" fill="#2E3F4D" />
         <g transform="translate(71 67)">
@@ -123,36 +120,18 @@ const EasyToImplement: React.FC<SvgData> = ({
             &lt;form id=&quot;form-id&quot; method=&quot;GET&quot;&gt;
             &lt;/form&gt;
           </tspan>{" "}
-          <tspan x="32" y="106">
-            &lt;script
-          </tspan>{" "}
+          <tspan x="32" y="106">&lt;script</tspan>{" "}
           <tspan x="32" y="126">
-            {" "}
             src=&quot;https://loremipsum.com/api.js&quot;
           </tspan>{" "}
           <tspan x="32" y="146">
-            {" "}
             data-client-name=&quot;Your Company&apos;s Name&quot;
           </tspan>{" "}
-          <tspan x="32" y="166">
-            {" "}
-            data-form-id=&quot;form-id&quot;
-          </tspan>{" "}
-          <tspan x="32" y="186">
-            {" "}
-            data-key=&quot;test_key&quot;
-          </tspan>{" "}
-          <tspan x="32" y="206">
-            {" "}
-            data-product=&quot;transactions&quot;
-          </tspan>{" "}
-          <tspan x="32" y="226">
-            {" "}
-            data-env=&quot;sandbox&quot;&gt;
-          </tspan>{" "}
-          <tspan x="32" y="246">
-            &lt;/script&gt;
-          </tspan>
+          <tspan x="32" y="166">data-form-id=&quot;form-id&quot;</tspan>{" "}
+          <tspan x="32" y="186">data-key=&quot;test_key&quot;</tspan>{" "}
+          <tspan x="32" y="206">data-product=&quot;transactions&quot;</tspan>{" "}
+          <tspan x="32" y="226">data-env=&quot;sandbox&quot;&gt;</tspan>{" "}
+          <tspan x="32" y="246">&lt;/script&gt;</tspan>
         </text>
       </g>
     </svg>

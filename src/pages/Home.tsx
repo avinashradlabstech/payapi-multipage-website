@@ -12,8 +12,8 @@ const Home: React.FC = () => {
     <>
       <div className="bg-alice-blue">
         <Navbar />
-        <div className="flex flex-col flex-shrink-0 sm:gap-22  lg:flex-row-reverse  justify-center items-center lg:gap-208 max-w-1110 mx-auto">
-          <div className="flex flex-col lg:flex-row px-6 gap-9 justify-center items-center lg:px-0 lg:justify-start h-auto">
+        <div className="flex flex-col flex-shrink-0 sm:gap-22  lg:flex-row-reverse  justify-center items-center lg:justify-between  lg:gap-125 max-w-1110 mx-auto">
+          <div className="flex flex-col lg:flex-row px-6 gap-9 justify-center items-center lg:px-0 lg:justify-start h-auto lg:mx-auto">
             <PhoneMockup width="263" height="500" />
           </div>
           <ScheduleDemo
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
 
         <WeWorkWith
           weWorkClass={
-            "items-center justify-center bg-secondary-mirage-blue gap-56 lg:gap-104"
+            "items-center justify-center bg-secondary-mirage-blue gap-56 lg:gap-132"
           }
           heading={home.weWorkWith.header}
           description={home.weWorkWith.description}

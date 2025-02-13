@@ -2,6 +2,7 @@ import React from "react";
 import { footerMenuItems } from "../data/menuItems";
 import Logo from "./Logo";
 import SocialMedia from "./SocialIcon";
+import PatternCircle from "../data/svg/background/PatternCircle";
 
 const FooterMenu: React.FC = () => {
   return (
@@ -36,13 +37,9 @@ const FooterMenu: React.FC = () => {
             <SocialMedia appliedClassName="flex flex-row items-center justify-center social-icon  z-[1]" />
           </div>
         </div>
-
-        <div className="absolute background-image top-185 h-780 w-780 sm:sm-bg-footer lg:lg-bg-footer">
-          <img
-            src="/img/bg-pattern/bg-pattern-circle.svg"
-            alt="Background Pattern"
-          />
-        </div>
+        {/* <div className="absolute top-[185px] w-[90vw] h-[90vw] max-w-[780px] max-h-[780px] lg:top-[-8.5rem] lg:left-[65.625rem]">
+          <PatternCircle className="absolute" />
+        </div> */}
       </div>
     </>
   );

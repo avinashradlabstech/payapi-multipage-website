@@ -4,6 +4,8 @@ import { EasyToImplement, SimpleUi } from "../data/svg/features";
 interface FeatureData {
   id: number;
   image: string;
+  imageUrl: string;
+  imageAlt: string;
   heading: string;
   description: string;
 }
@@ -34,23 +36,23 @@ const Features: React.FC<Feature> = ({ featureDetails }) => {
     <div className="flex flex-col py-20 gap-20  lg:pt-150 lg:mx-auto max-w-1110 ">
       {featureDetails.map((item, index) => {
         const ImageMap = imageMap[item.image];
-        const isEvenIndex = index % 2 !== 0; // 2nd, 4th, 6th elements
+        const isEvenIndex = index % 2 !== 0;
 
         return (
           <div
             key={item.id}
-            className={`flex flex-col lg:flex-row px-6 gap-9  justify-center items-center lg:justify-start mx-auto ${
-              isEvenIndex ? "lg:flex-row-reverse " : " " // Swap order on large screens
+            className={`flex flex-col lg:flex-row px-6 gap-9  justify-center items-center lg:justify-start mx-auto lg:gap-125 ${
+              isEvenIndex ? "lg:flex-row-reverse " : " "
             }`}
           >
             {/* Image */}
-            <div className="flex flex-col lg:min-w-[445px]">
+           <div className="flex flex-col lg:min-w-[445px] ">
               {ImageMap ? <ImageMap /> : ""}
-            </div>
+            </div> 
 
             {/* Heading & Description */}
             <div className="flex flex-col gap-6 justify-center items-center lg:items-start flex-shrink-0">
-              <div className=" flex flex-col max-w-[328px] sm:max-w-[573px] lg:max-w-[445px] gap-6 items-center ">
+              <div className=" flex flex-col max-w-[328px] sm:max-w-[573px] lg:max-w-[445px] gap-6 items-center lg:items-start">
                 {/* Heading */}
                 <div className="flex font-serif text-36 text-secondary-san-juan-blue font-normal leading-36 sm:text-48 sm:leading-56 text-center lg:text-left -tracking-0.277">
                   {item.heading}

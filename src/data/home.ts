@@ -13,6 +13,8 @@ interface WeWorkWithData {
 interface Features {
     id: number;
     image: string;
+    imageUrl: string;
+    imageAlt: string;
     heading: string;
     description: string;
 }
@@ -53,6 +55,8 @@ const home: Home = {
         {
             id: 1,
             image: "EasyToImplement",
+            imageUrl: '/img/home/desktop/illustration-easy-to-implement.svg',
+            imageAlt: 'easy-to-implement',
             heading: "Easy to implement",
             description: "Our API comes with just a few lines of code. You’ll be up and running in no time. We built our documentation page to integrate payments functionality with ease.",
 
@@ -60,6 +64,8 @@ const home: Home = {
         {
             id: 2,
             image: "SimpleUi",
+            imageUrl: '/img/home/desktop/illustration-simple-ui.svg',
+            imageAlt: 'simple-ui-ux',
             heading: "Simple UI & UX",
             description: "Our pre-built form is easy to integrate in your app or website’s checkout flow and designed to optimize conversion. ",
 
