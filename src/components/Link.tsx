@@ -34,7 +34,7 @@ const Link: React.FC<LinkData> = ({
   return (
     <>
       <a
-        className={`flex font-sans text-15 font-bold tracking-custom flex-shrink-0 rounded-24 sm:w-173 min-h-48 text-center justify-center items-center lg:w-129
+        className={`flex font-sans text-15 font-bold tracking-custom flex-shrink-0 rounded-24 text-center justify-center items-center min-h-48 sm:w-173  lg:w-129
           ${appliedTypeClass}       
           ${additionalButtonCss ? additionalButtonCss : ""}  
           ${disabled ? disabled : ""}      

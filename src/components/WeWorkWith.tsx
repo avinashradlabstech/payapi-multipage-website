@@ -101,7 +101,7 @@ const WeWorkWith: React.FC<WeWorkWithData> = ({
               </div>
             </div>
             {/* Link */}
-            <div className="flex flex-col mx-auto lg:mx-0 lg:items-start">
+            <div className="flex flex-col mx-auto lg:mx-0 lg:items-start min-w-129">
               <Link type="secondary" text={buttonTxt} url="/about" />
             </div>
           </div>

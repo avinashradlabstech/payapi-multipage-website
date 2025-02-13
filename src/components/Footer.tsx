@@ -7,8 +7,8 @@ import SocialMedia from "./SocialIcon";
 const FooterMenu: React.FC = () => {
   return (
     <>
-      <div className="footer-menu flex relative bg-secondary-mirage-blue overflow-hidden lg:px-165 ">
-        <div className="flex flex-col items-center justify-center sm:flex-row sm:justify-between  mx-auto lg:gap-663">
+      <div className="footer-menu flex relative bg-secondary-mirage-blue overflow-hidden  lg:px-165 ">
+        <div className="flex flex-col items-center justify-center sm:flex-row sm:justify-between  mx-auto sm:gap-150 lg:gap-663">
           <div className="flex flex-col items-center gap-6 sm:flex-row lg:flex-row lg:items-center sm:gap-18">
             <a href="/">
               {" "}

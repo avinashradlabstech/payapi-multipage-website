@@ -33,7 +33,7 @@ const imageMap: {
 
 const Features: React.FC<Feature> = ({ featureDetails }) => {
   return (
-    <div className="flex flex-col py-20 gap-20  lg:pt-150 lg:mx-auto max-w-1110 ">
+    <div className="flex flex-col py-20 gap-20 sm:gap-100 lg:pt-150 lg:gap-150  mx-auto max-w-1110 ">
       {featureDetails.map((item, index) => {
         const ImageMap = imageMap[item.image];
         const isEvenIndex = index % 2 !== 0;
@@ -46,9 +46,9 @@ const Features: React.FC<Feature> = ({ featureDetails }) => {
             }`}
           >
             {/* Image */}
-           <div className="flex flex-col lg:min-w-[445px] ">
+            <div className="flex flex-col lg:min-w-[445px] ">
               {ImageMap ? <ImageMap /> : ""}
-            </div> 
+            </div>
 
             {/* Heading & Description */}
             <div className="flex flex-col gap-6 justify-center items-center lg:items-start flex-shrink-0">
