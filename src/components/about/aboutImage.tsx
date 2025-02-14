@@ -13,7 +13,7 @@ const AboutImage: React.FC<AboutImageData> = ({
 }) => {
 
   return (
-    <div className="pt-[76px] sm:pt-[90px]  w-full flex justify-center items-center">
+    <div className="pt-76 sm:pt-90 w-full flex justify-center items-center">
       <img
         className="object-contain"
         src={`${imageUrl}/mobile/${imageName}`}

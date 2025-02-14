@@ -51,15 +51,16 @@ const Home: React.FC = () => {
 
         <FeatureCard card={home.cards} />
 
-        <div className=" flex flex-col mx-auto pb-20 sm:flex-row justify-center items-center sm:px-100 sm:py-93 lg:px-96 lg:max-w-1110">
+        <div className=" flex flex-col mx-auto pb-20 sm:flex-row justify-center items-center sm:px-100 sm:py-93  lg:max-w-1110">
           <ScheduleDemo
             additionalDivCss="py-6 gap-4 sm:gap-10 lg:flex-row lg:justify-around mx-auto lg:gap-220"
             additionalHeadingCss="flex lg:w-[445px] "
             heading="Ready to start?"
             email="demoEmail2"
-            additionalEmailCss="sm:left-[33px]"
+            additionalEmailCss=""
             placeholder="Enter email address"
             buttonLabel="Schedule a Demo"
+            additionalButtonCss="ml-0 sm:ml-[-95px]"
             autoComplete="off"
           />
         </div>

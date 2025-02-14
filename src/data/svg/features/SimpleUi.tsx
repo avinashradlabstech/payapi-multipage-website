@@ -30,10 +30,10 @@ const PhoneMockup: React.FC<SvgData> = ({
 
       // Adjust size based on screen width
       if (screenWidth > 0 && screenWidth < 470) {
-        setDynamicWidth("350");
+        setDynamicWidth("300");
         setDynamicHeight("100%");
 
-        setDynamicMinX(50);
+        setDynamicMinX(0);
         setDynamicMinY(0);
         setDynamicMinWidth(660);
         setDynamicMinHeight(600);
@@ -46,13 +46,13 @@ const PhoneMockup: React.FC<SvgData> = ({
         setDynamicMinWidth(660);
         setDynamicMinHeight(600);
       } else if (screenWidth >= 1024) {
-        setDynamicWidth("600");
+        setDynamicWidth("550");
         setDynamicHeight("100%");
 
         setDynamicMinX(20);
         setDynamicMinY(0);
         setDynamicMinWidth(600);
-        setDynamicMinHeight(700);
+        setDynamicMinHeight(550);
       }
     };
 

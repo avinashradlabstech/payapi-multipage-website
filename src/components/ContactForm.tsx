@@ -27,6 +27,7 @@ const ContactForm: React.FC<ContactFormData> = ({
   const [focusedFields, setFocusedFields] = useState<{
     [key: string]: boolean;
   }>({});
+  const [btnText, setBtnText] = useState<string>('Submit');
   const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
   const [formValues, setFormValues] = useState<{
     name: string;
@@ -132,12 +133,12 @@ const ContactForm: React.FC<ContactFormData> = ({
     }
 
     setErrors({ ...errors, [name]: validationError });
-    console.log(errors?.length)
+    console.log(errors?.length);
     setFocusedFields({ ...focusedFields, [name]: false });
   };
 
   // Handle form submit
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const validationErrors: { [key: string]: string | null } = {};
 
@@ -163,19 +164,42 @@ const ContactForm: React.FC<ContactFormData> = ({
     }
 
     setErrors(validationErrors);
-    //console.log(Object.keys(validationErrors).length);
+    
     if (Object.keys(validationErrors).length === 0) {
-      //console.log("No error");
-      //console.log("Form submitted successfully!", formValues);
-      setSubmissionSuccess(true);
-      setFormValues({
-        name: "",
-        company: "",
-        email: "",
-        title: "",
-        message: "",
-        agreeToUpdates: false,
-      });
+      try {
+        setBtnText("Wait..");
+        const response = await fetch("http://localhost:8080/api/schedule-demo", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formValues),
+        });
+
+        const data = await response.json();
+
+        if (response.status === 200) {
+          setSubmissionSuccess(true);
+          setFormValues({
+            name: "",
+            company: "",
+            email: "",
+            title: "",
+            message: "",
+            agreeToUpdates: false,
+          });
+          setBtnText("Submit");
+        } else {
+          setErrors({ ...errors, submit: data.message });
+          setBtnText("Submit");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setErrors({
+          ...errors,
+          submit: "Something went wrong. Please try again.",
+        });
+      }
     }
   };
 
@@ -259,7 +283,6 @@ const ContactForm: React.FC<ContactFormData> = ({
               }
             }}
             checked={formValues.agreeToUpdates}
-            
           />
           {errors.agreeToUpdates && (
             <p
@@ -274,7 +297,7 @@ const ContactForm: React.FC<ContactFormData> = ({
           <Button
             type="outline"
             additionalButtonCss={`${additionalButtonCss}`}
-            text={buttonLabel}
+            text={btnText}
           />
         </div>
 

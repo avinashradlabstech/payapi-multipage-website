@@ -33,7 +33,7 @@ const imageMap: {
 
 const Features: React.FC<Feature> = ({ featureDetails }) => {
   return (
-    <div className="flex flex-col py-20 gap-20 sm:gap-100 lg:pt-150 lg:gap-150  mx-auto max-w-1110 ">
+    <div className="flex flex-col py-20 gap-20  sm:py-100 lg:py-150 lg:gap-150 mx-auto max-w-1110 ">
       {featureDetails.map((item, index) => {
         const ImageMap = imageMap[item.image];
         const isEvenIndex = index % 2 !== 0;
@@ -41,7 +41,7 @@ const Features: React.FC<Feature> = ({ featureDetails }) => {
         return (
           <div
             key={item.id}
-            className={`flex flex-col lg:flex-row px-6 gap-9  justify-center items-center lg:justify-start mx-auto lg:gap-125 ${
+            className={`flex flex-col lg:flex-row px-6 gap-9  justify-center items-center lg:justify-start mx-auto lg:px-0 lg:gap-125  ${
               isEvenIndex ? "lg:flex-row-reverse " : " "
             }`}
           >

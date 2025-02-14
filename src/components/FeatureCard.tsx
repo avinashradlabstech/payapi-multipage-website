@@ -48,7 +48,7 @@ const imageMap: {
 
 const FeatureCard: React.FC<CardData> = ({ card }) => {
   return (
-    <div className="flex flex-col sm:flex-row justify-center items-center px-6 gap-12 lg:gap-30">
+    <div className="flex flex-col sm:flex-row justify-center items-center gap-12 sm:py-10 lg:gap-30  mx-auto max-w-1110 ">
       {card.map((item) => {
         const IconComponent = imageMap[item.icon];
         return (
