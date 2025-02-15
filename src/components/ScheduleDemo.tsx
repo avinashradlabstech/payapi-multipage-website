@@ -96,7 +96,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
       if (response.ok) {
         setSubmissionSuccess(true);
         setBtnText("Schedule a Demo");
-        setSuccessMessage("You have already subscribed");
+        setSuccessMessage("You have subscribed sucessfully");
         setInputValue("");
         setError("");
       } else if (response.status === 400) {
