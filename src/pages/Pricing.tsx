@@ -17,7 +17,7 @@ const Pricing: React.FC = () => {
           <Pageheading heading={pricing.heading} additionalCss="lg:max-w-546 " />
         </div>
 
-        <div className="pricing-plan-section  mx-auto lg:max-w-1110">
+        <div className="pricing-plan-section  mx-auto sm:max-w-689 lg:max-w-1110">
           <PricingPlan planDetails={pricing.planDetails} />
         </div>
 
