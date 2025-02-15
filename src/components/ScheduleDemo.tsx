@@ -26,7 +26,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   additionalHeadingCss = "",
   email,
   additionalEmailCss = "",
-  placeholder,  
+  placeholder,
   additionalButtonCss = "",
   autoComplete = "off",
   subHeading,
@@ -35,6 +35,8 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   errorDivCss = "",
 }) => {
   const [btnText, setBtnText] = useState<string>("Schedule a Demo");
+  const [successMessage, setSuccessMessage] = useState<string>("");
+
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>(""); // Initialize with empty string
@@ -84,7 +86,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email: inputValue
+            email: inputValue,
           }),
         }
       );
@@ -93,15 +95,24 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
 
       if (response.ok) {
         setSubmissionSuccess(true);
+        setBtnText("Schedule a Demo");
+        setSuccessMessage("You have already subscribed");
         setInputValue("");
-        setBtnText("Schedule ad Demo");
+        setError("");
+      } else if (response.status === 400) {
+        // Handle 400 Bad Request
+        setSuccessMessage("You have already subscribed");
+        setBtnText("Schedule a Demo");
+        setInputValue("");
+        setError(data.message);
       } else {
         console.error("Email sending failed:", data);
-        setBtnText("Schedule ad Demo");
+        setBtnText("Schedule a Demo");
+        //setSuccessMessage("You have already subscribed");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      setBtnText("Schedule ad Demo");
+      //setBtnText("Schedule a Demo");
     }
   };
 
@@ -183,7 +194,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <h2 className="text-green-600 text-lg font-semibold">Success!</h2>
             <p className="text-sans text-15 text-secondary-san-juan-blue font-normal leading-25">
-              Your message has been submitted successfully.
+              {successMessage}
             </p>
             <button
               className="mt-4 bg-primary-dark-pink text-white px-4 py-2 rounded-md"
