@@ -10,7 +10,7 @@ interface ScheduleDemoData {
   email: string;
   additionalEmailCss?: string;
   placeholder: string;
-  buttonLabel: string;
+  buttonLabel?: string;
   autoComplete?: string;
   additionalButtonCss?: string;
   subHeading?: string;
@@ -26,8 +26,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   additionalHeadingCss = "",
   email,
   additionalEmailCss = "",
-  placeholder,
-  buttonLabel,
+  placeholder,  
   additionalButtonCss = "",
   autoComplete = "off",
   subHeading,
