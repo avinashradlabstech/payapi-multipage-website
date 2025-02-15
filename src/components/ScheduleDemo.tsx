@@ -35,6 +35,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   contactTxt,
   errorDivCss = "",
 }) => {
+  const [btnText, setBtnText] = useState<string>("Schedule a Demo");
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>(""); // Initialize with empty string
@@ -65,13 +66,43 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   };
 
   // Handle Submit and validate before proceeding
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const validateError = requiredEmail(inputValue);
+
     if (validateError) {
       setError(validateError);
-    } else {
-      setSubmissionSuccess(true);
-      setInputValue("");
+      return;
+    }
+
+    try {
+      setBtnText("Wait..");
+
+      const response = await fetch(
+        "https://api-h580.onrender.com/api/subscribe",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: inputValue
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmissionSuccess(true);
+        setInputValue("");
+        setBtnText("Schedule ad Demo");
+      } else {
+        console.error("Email sending failed:", data);
+        setBtnText("Schedule ad Demo");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setBtnText("Schedule ad Demo");
     }
   };
 
@@ -80,7 +111,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
   return (
     <div
       className={`flex flex-col justify-center items-center ${additionalDivCss}`}
-    >      
+    >
       {heading && (
         <div
           className={` 
@@ -142,7 +173,7 @@ const ScheduleDemo: React.FC<ScheduleDemoData> = ({
           additionalButtonCss={`sm:relative ${additionalButtonCss} ${
             isDisabled ? "cursor-not-allowed" : ""
           }`}
-          text={buttonLabel}
+          text={btnText}
           onClick={handleSubmit}
           // disabled={isDisabled}
         />

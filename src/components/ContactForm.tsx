@@ -8,7 +8,7 @@ interface ContactFormData {
   heading?: string;
   headingCss?: string;
   additionalHeadingCss?: string;
-  buttonLabel: string;
+  buttonLabel?: string;
   autoComplete?: string;
   additionalButtonCss?: string;
   errorDivCss?: string;
@@ -18,8 +18,7 @@ const ContactForm: React.FC<ContactFormData> = ({
   additionalDivCss = "",
   heading,
   headingCss = "",
-  additionalHeadingCss = "",
-  buttonLabel,
+  additionalHeadingCss = "",  
   additionalButtonCss = "",
   autoComplete = "off",
   errorDivCss = "",
@@ -168,7 +167,7 @@ const ContactForm: React.FC<ContactFormData> = ({
     if (Object.keys(validationErrors).length === 0) {
       try {
         setBtnText("Wait..");
-        const response = await fetch("http://localhost:8080/api/schedule-demo", {
+        const response = await fetch("https://api-h580.onrender.com/api/schedule-demo", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
