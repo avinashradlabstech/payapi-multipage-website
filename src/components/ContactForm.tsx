@@ -237,7 +237,7 @@ const ContactForm: React.FC<ContactFormData> = ({
                 setFocusedFields({ ...focusedFields, [field]: true })
               }
               className={`pl-[1.25rem] py-[0.625rem] focus:outline-none border-b border-secondary-san-juan-blue
-               font-sans text-15 text-secondary-san-juan-blue font-normal leading-25 -tracking-0.115 opacity-75 bg-alice-blue
+               font-sans text-15  font-normal leading-25 -tracking-0.115 opacity-75 bg-alice-blue
                xs:min-w-[20.4375rem] min-h-[3rem] sm:relative sm:font-bold lg:font-normal 
                ${focusedFields[field] ? "opacity-100" : ""} ${errors[field] ? "text-red" : "text-secondary-san-juan-blue"}`}
               autoComplete={autoComplete}
